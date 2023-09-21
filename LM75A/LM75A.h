@@ -13,13 +13,13 @@
 
 #define LM75A_I2C_TIMEOUT         	50 
 
-typedef enum LM75A_DecimalMode {
+typedef enum {
 	LM75A_DEC_5, 
 	LM75A_DEC_25, 
 	LM75A_DEC_125,
 } LM75A_DecimalMode;
 
-typedef struct LM75A {
+typedef struct {
 	I2C_HandleTypeDef* hi2c;
 	uint8_t adress;
 	LM75A_DecimalMode mode;
