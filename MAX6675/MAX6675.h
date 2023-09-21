@@ -5,7 +5,7 @@
 
 #define MAX6675_SPI_TIMEOUT 50 
 
-typedef struct MAX6675 {
+typedef struct {
 	SPI_HandleTypeDef* hspi;
 	GPIO_TypeDef* GPIOx;
 	uint16_t GPIO_Pin;
