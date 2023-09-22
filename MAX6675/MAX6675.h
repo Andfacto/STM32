@@ -11,7 +11,7 @@ typedef struct {
 	uint16_t _GPIO_Pin;
 } MAX6675;
 
-void MAX6675_Init(MAX6675* max6675, SPI_HandleTypeDef* _hspi, GPIO_TypeDef* _GPIOx, uint16_t _GPIO_Pin);
+void MAX6675_Init(MAX6675* max6675, SPI_HandleTypeDef* hspi, GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
 
 float MAX6675_GetTemperature(MAX6675* max6675);
 
