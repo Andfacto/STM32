@@ -13,9 +13,10 @@ void MAX6675_Init(MAX6675* max6675, SPI_HandleTypeDef* hspi, GPIO_TypeDef* GPIOx
 
 float MAX6675_GetTemperature(MAX6675* max6675)
 {
-	uint16_t value = MAX6675_Read(max6675);
-	float temperature = (value >> 3) * 0.25;
+	float temperature;
 	
+	uint16_t data = MAX6675_Read(max6675);
+	temperature = (data >> 3) * 0.25;
 	HAL_Delay(220);
 	
 	return temperature;
