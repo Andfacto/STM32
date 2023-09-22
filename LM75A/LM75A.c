@@ -79,9 +79,9 @@ void LM75A_Write8bitReg(LM75A* lm75a, uint8_t reg, uint8_t data)
 	HAL_I2C_Master_Transmit(lm75a->_hi2c, lm75a->_adress << 1, buffer, 2, LM75A_I2C_TIMEOUT);
 }
 
-void LM75A_Write16bitReg(LM75A* lm75a, uint8_t reg, uint16_t value) 
+void LM75A_Write16bitReg(LM75A* lm75a, uint8_t reg, uint16_t data) 
 {
-	uint8_t buffer[3] = {reg, value >> 8, value};	
+	uint8_t buffer[3] = {reg, data >> 8, data};	
 	HAL_I2C_Master_Transmit(lm75a->_hi2c, lm75a->_adress << 1, buffer, 3, LM75A_I2C_TIMEOUT);
 }
 
