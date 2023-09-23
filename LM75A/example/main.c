@@ -91,7 +91,6 @@ int main(void)
 	MX_I2C1_Init();
 	/* USER CODE BEGIN 2 */
 	LM75A_Init(&lm75a, &hi2c1, 0x48, LM75A_DEC_125);
-	uint8_t buffer[2];
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -102,7 +101,6 @@ int main(void)
 
 		/* USER CODE BEGIN 3 */
 		float temperature = LM75A_GetTemperature(&lm75a);
-		HAL_Delay(100);
 	}
 	/* USER CODE END 3 */
 }
