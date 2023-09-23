@@ -89,7 +89,7 @@ uint8_t LM75A_Read8bitReg(LM75A* lm75a, uint8_t reg)
 {
 	uint8_t data;
 	
-	HAL_I2C_Master_Transmit(lm75a->_hi2c, lm75a->_adress << 1, reg, 1, LM75A_I2C_TIMEOUT);
+	HAL_I2C_Master_Transmit(lm75a->_hi2c, lm75a->_adress << 1, &reg, 1, LM75A_I2C_TIMEOUT);
 	HAL_I2C_Master_Receive(lm75a->_hi2c, lm75a->_adress << 1, data, 1, LM75A_I2C_TIMEOUT);
 	
 	return data;
@@ -99,7 +99,7 @@ uint16_t LM75A_Read16bitReg(LM75A* lm75a, uint8_t reg)
 {
 	uint8_t buffer[2];
 	
-	HAL_I2C_Master_Transmit(lm75a->_hi2c, lm75a->_adress << 1, reg, 1, LM75A_I2C_TIMEOUT);
+	HAL_I2C_Master_Transmit(lm75a->_hi2c, lm75a->_adress << 1, &reg, 1, LM75A_I2C_TIMEOUT);
 	HAL_I2C_Master_Receive(lm75a->_hi2c, lm75a->_adress << 1, buffer, 2, LM75A_I2C_TIMEOUT);
 
 	return buffer[0] << 8 | buffer[1];
