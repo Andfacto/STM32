@@ -7,7 +7,7 @@ extern "C"{
 void LM75A_Init(LM75A* lm75a, I2C_HandleTypeDef* hi2c, uint8_t adress, LM75A_DecimalMode mode)
 {
 	lm75a->_hi2c = hi2c;
-    lm75a->_adress = adress;
+	lm75a->_adress = adress;
 	lm75a->_mode = mode;
 }
 
