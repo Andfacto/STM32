@@ -7,7 +7,7 @@ extern "C"{
 void MAX6675_Init(MAX6675* max6675, SPI_HandleTypeDef* hspi, GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 {
 	max6675->_hspi = hspi;
-    max6675->_GPIOx = GPIOx;
+	max6675->_GPIOx = GPIOx;
 	max6675->_GPIO_Pin = GPIO_Pin;
 }
 
