@@ -8,15 +8,15 @@ extern "C"{
 uint32_t timer;
 
 Kalman KalmanX = {
-		.Q_angle = 0.001f,
-		.Q_bias = 0.003f,
-		.R_measure = 0.03f
+	.Q_angle = 0.001f,
+	.Q_bias = 0.003f,
+	.R_measure = 0.03f
 };
 
 Kalman KalmanY = {
-		.Q_angle = 0.001f,
-		.Q_bias = 0.003f,
-		.R_measure = 0.03f,
+	.Q_angle = 0.001f,
+	.Q_bias = 0.003f,
+	.R_measure = 0.03f,
 };
 
 uint8_t MPU6050_Init(MPU6050* mpu6050, I2C_HandleTypeDef* hi2c)
@@ -88,7 +88,6 @@ void MPU6050_ReadAll(MPU6050* mpu6050)
 	{
 		mpu6050->roll = atan(mpu6050->Accel_Y_RAW / roll_sqrt) * RAD_TO_DEG;
 	}
-
 	else
 	{
 		mpu6050->roll = 0.0;
@@ -102,7 +101,6 @@ void MPU6050_ReadAll(MPU6050* mpu6050)
 		KalmanY.angle = mpu6050->pitch;
 		mpu6050->KalmanAngleY = mpu6050->pitch;
 	}
-
 	else
 	{
 		mpu6050->KalmanAngleY = MPU6050_GetKalmanAngle(&KalmanY, mpu6050->pitch, mpu6050->Gy, dt);
