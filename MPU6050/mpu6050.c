@@ -88,7 +88,6 @@ void MPU6050_ReadAll(MPU6050* mpu6050)
 	{
 		mpu6050->roll = atan(mpu6050->Accel_Y_RAW / roll_sqrt) * RAD_TO_DEG;
 	}
-
 	else
 	{
 		mpu6050->roll = 0.0;
@@ -102,7 +101,6 @@ void MPU6050_ReadAll(MPU6050* mpu6050)
 		KalmanY.angle = mpu6050->pitch;
 		mpu6050->KalmanAngleY = mpu6050->pitch;
 	}
-
 	else
 	{
 		mpu6050->KalmanAngleY = MPU6050_GetKalmanAngle(&KalmanY, mpu6050->pitch, mpu6050->Gy, dt);
