@@ -6,5 +6,5 @@ MLX90614 Library for STM32 HAL Driver
 * Language: C
 
 # Features
-* MLX90614 class holds I2C bus pointer and adress values
+* MLX90614 structure holds I2C bus pointer
 * Library is portable and should work with different STM32 boards
